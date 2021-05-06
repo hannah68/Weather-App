@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #E8EEF1;
+    color: #fff;
+    font-size: 16px; 
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* General styling */
+.btn{
+    background-color: #fed049;
+}
+
+button:focus,
+input:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* weather container */
+.app-title{
+    cursor: pointer;
+}
+.weather-container{
+    background-color: #007580;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    border:0;
+    display: none;
+}
+.weather-container.show{
+    display: block; 
+}
+
+.more-info{
+    background-color: #282846;
+    border-radius: 1rem;
+    padding: 1rem;
+    border:0;
+    margin-left: 0;
+    margin-right: 0;
+    display: none;
+}
+
+.more-info.show{
+    display: flex;
+}
+
+.col i{
+    color: #fed049;
+}
+
+.col-first i,
+.col-second i{
+    color: #fed049;
+}
+
+.temp i{
+    color: #fed049;
+}
+.name{
+    font-size: 20px;
+}
+
+.temperature{
+    font-size: 20px;
+}
+
+/* js */
+.location{
+    margin-left: 7rem;
+}
+
+
+/* Calender starts */
+.top{
+    height: 50px;
+    width: 50%;
+    background-color: #d8ebe4;
+    position: relative;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border:0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ring{
+    position: absolute;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background: #007580;
+    border-radius: 50%;
+    
+}
+
+.top .ring::before{
+    content: "";
+    position: absolute;
+    top: -32px;
+    height: 45px;
+    width: 25%;
+    left: 25%;
+    background-color: #282846;
+    border-radius: 20px 0 0 20px;
+}
+
+.top .ring::after{
+    content: "";
+    position: absolute;
+    top: -32px;
+    height: 45px;
+    width: 25%;
+    right: 25%;
+    background-color: #4b5b86;
+    border-radius: 0 20px 20px 0;
+}
+
+.top .ring.left{
+    left: 50px;
+}
+
+.top .ring.right{
+    right: 50px;
+}
+
+.top .bottom{
+    position: absolute;
+    top: 100%;
+    height: 80px;
+    width: 100%;
+    background-color:#fff;
+    color: #000;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);border:0;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-shadow: 1px 1px 2px #2b577e;
+}
+/* Calender ends */
+
+/* Forcast styling/ chart*/
+.forcast-container{
+    background-color: #282846;
+}
+.forcast{
+    display: none;
+}
+
+.forcast.show{
+    display: block;
+}
+
+.date1,
+.date2,
+.date3{
+    font-size: 20px;
+}
+
+.label{
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(180deg);
+    transform: rotate(180deg);
+    position: absolute;
+    left: 25px;
+    bottom: 130px;
+    color: #fed049;
+}
+
+.label-hour{
+    color: #fed049;
+}
+.condition1,
+.condition2,
+.condition3{
+    font-size: 20px;
+}
+
+.more-desc{
+    background-color:#3c3c52 ;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 1rem;
+}
+
+/* media Query */
+@media (max-width: 540px) {
+    .top .bottom{
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .name{
+        font-size: 18px;
+    }
+
+    .temperature{
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 451px) {
+    .top .bottom{
+        padding: 1rem;
+    }
+
+    .name{
+        font-size: 15px;
+    }
+
+    .temperature{
+        font-size: 15px;
+    }
+}
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="video">
+        <video autoplay muted loop id="myVideo" src="/videos/sheep.mp4"></video>
+    </div>
+    
+    <div class="container h-100 mt-5">
+        <div class="row align-items-center h-100">
+            <div class="col-xl-6 mx-auto">
+                <h1 class="app-title text-center mb-5 font-weight-bold text-light">Weather App</h1>
+                <form>
+                    <input type="text" class="search-place form-control" placeholder="Search Locations">
+                    <div class="buttons d-flex align-items-center justify-content-center mt-3">
+                        <button type="submit" class="current-btn btn btn-lg mr-3">Weather</button>
+                        <button type="button" class="forcast-btn btn btn-lg">Forcast</button>
+                    </div>
+                </form>
+                
+                <div class="weather-container mt-5">
+                    <div class="top-container d-flex justify-content-between align-items-center">
+                        <div class="weather-icon d-flex flex-column justify-content-center align-items-center">
+                            <img src="icons/113.png" alt="img icon">
+                            <div class="name"></div>
+                            <span class="country"></span>
+                        </div>
+
+                        <div class="temperature">
+                            <div class="temp"></div>
+                            <div class="text"></div>
+                        </div>
+
+                        <div class="top align-self-start">
+                            <div class="left ring"></div>
+                            <div class="right ring"></div>
+                            <div class="bottom text-center">
+                                <div class="bottom-right pb-1"></div>
+                                <div class="bottom-left"></div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                    
+                <div class="row more-info mt-5">
+                    <div class="col">
+                        <p class="fahrenheit"></p>
+                        <p class="wind"></p>
+                        <p class="feel"></p>
+                        <p class="humidity"></i></p>
+                    </div>
+                    
+                    <div class="col">
+                        <p class="percipitation"></p>
+                        <p class="cloud"></p>
+                        <p class="pressure"></p>
+                        <p class="uv"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forcast container -->
+    <div class="container forcast mt-5">
+        <!-- first day -->
+        <div class="row mb-4">
+            <div class="col-md-6 justify-content-cente mx-auto">
+                <div class="forcast-container p-5 rounded">
+                    <p class="date1 text-center"></p>
+                    <div class="icon-container d-flex justify-content-around align-items-center">
+                        <img class="img-icon1" src="icons/113.png" alt="img icon">
+                        <div class="condition1"></div>
+                    </div>
+                    <div class="more-desc d-flex justify-content-around align-items-center mt-4 p-3">
+                        <div class="col-first">
+                            <div class="max-temp1"></div>
+                            <div class="min-temp1"></div>
+                            <div class="max-wind1"></div>
+                        </div>
+                        <div class="col-second">
+                            <div class="sun-rise1"></div>
+                            <div class="sun-set1"></div>
+                            <div class="perc-fc1"></div>
+                        </div>
+                    </div>
+                    <div class="chart mt-5 d-flex">
+                        <div class="label">Temperature(°C)</div>
+                        <canvas id="chart1"></canvas>
+                    </div>
+                    <div class="label-hour text-center mt-2">Hour</div>
+                </div>
+            </div>
+        </div>
+        <!-- Second day -->
+        <div class="row mb-4">
+            <div class="col-md-6 justify-content-cente mx-auto">
+                <div class="forcast-container p-5 rounded">
+                    <p class="date2 text-center"></p>
+                    <div class="icon-container d-flex justify-content-around align-items-center">
+                        <img  class="img-icon2" src="icons/113.png" alt="img icon">
+                        <div class="condition2"></div>
+                    </div>
+                    <div class="more-desc d-flex justify-content-around align-items-center mt-4 p-3">
+                        <div class="col-first">
+                            <div class="max-temp2"></div>
+                            <div class="min-temp2"></div>
+                            <div class="max-wind2"></div>
+                        </div>
+                        <div class="col-second">
+                            <div class="sun-rise2"></div>
+                            <div class="sun-set2"></div>
+                            <div class="perc-fc2"></div>
+                        </div>
+                    </div>
+                    <div class="chart mt-5">
+                        <div class="label">Temperature°C</div>
+                        <canvas id="chart2"></canvas>
+                    </div>
+                    <div class="label-hour text-center mt-2">Hour</div>
+                </div>
+            </div>
+        </div>
+        <!-- Third day -->
+        <div class="row mb-4">
+            <div class="col-md-6 justify-content-center mx-auto">
+                <div class="forcast-container p-5 rounded">
+                    <p class="date3 text-center"></p>
+                    <div class="icon-container d-flex justify-content-around align-items-center">
+                        <img class="img-icon3" src="icons/113.png" alt="img icon">
+                        <div class="condition3"></div>
+                    </div>
+                    <div class="more-desc d-flex justify-content-around align-items-center mt-4 p-3">
+                        <div class="col-first">
+                            <div class="max-temp3 pb-1"></div>
+                            <div class="min-temp3 pb-1"></div>
+                            <div class="max-wind3 pb-1"></div>
+                        </div>
+                        <div class="col-second">
+                            <div class="sun-rise3 pb-1"></div>
+                            <div class="sun-set3 pb-1"></div>
+                            <div class="perc-fc3 pb-1"></div>
+                        </div>
+                    </div>
+                    <div class="chart mt-5">
+                        <div class="label">Temperature°C</div>
+                        <canvas id="chart3"></canvas>
+                    </div>
+                    <div class="label-hour text-center mt-2">Hour</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
